@@ -1,38 +1,23 @@
 import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import Constants from 'expo-constants';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import RegisterExpenses from './screens/RegisterExpenses';
+import VisualiseBudget from './screens/VisualiseBudget';
 
-// You can import from local files
-import AssetExample from './components/AssetExample';
+const Stack = createNativeStackNavigator();
 
-// or any pure javascript modules available in npm
-import { Card } from 'react-native-paper';
-
-export default function App() {
+const MyStack = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.paragraph}>
-        Dianas best work
-      </Text>
-      <Card>
-        <AssetExample />
-      </Card>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="RegisterExpenses"
+          component={RegisterExpenses}
+          options={{ title: 'Register expens start' }}
+        />
+        <Stack.Screen name="VisualiseBudget" component={VisualiseBudget} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#ecf0f1',
-    padding: 8,
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-});
+};
+export default MyStack
