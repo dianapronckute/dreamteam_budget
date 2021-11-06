@@ -5,7 +5,7 @@ const VisualiseBudget = () => {
 
     return (
         <View style={{ flex:1, justifyContent: 'center', alignContent: 'center'}}>
-        <Text style ={{ fontSize: 30}}>Visualise budget please</Text>
+        <Text style ={{ fontSize: 30}}>Tut budet kruglaja kartinka</Text>
         </View>
       
       );
