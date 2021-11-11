@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Button, Text,SafeAreaView, StyleSheet, TextInput, TouchableOpacity} from 'react-native'
+import React , {useState}from 'react';
+import {View, Button, Text,SafeAreaView, StyleSheet, TextInput, TouchableOpacity, Component} from 'react-native'
 import VisualiseBudget from './VisualiseBudget';
 //import {Dropdown } from 'react-native-material-dropdown';
 import { LogBox } from 'react-native';
@@ -8,9 +8,14 @@ import { NavigationContainer } from '@react-navigation/native';
  
 
 
+
+
 const RegisterExpenses = ({ navigation }) => {
   const [text, onChangeText] = React.useState("");
   const [number, onChangeNumber] = React.useState(null);
+  const [count, setCount] = useState(0);
+  const onPress = () => setCount(prevCount => prevCount + 1);
+  
 
   return (
     
@@ -41,19 +46,21 @@ const RegisterExpenses = ({ navigation }) => {
        </TouchableOpacity>
        
        <TouchableOpacity
+       onPress={onPress}
       style={{width: 250,
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',backgroundColor: 'blue',position: 'absolute',
         margin: 16,
         bottom: 10,}} >
-      <Text style={{ fontSize: 50, color: 'white' }}>SAVE</Text>
+      <Text style={{ fontSize: 50, color: 'white' }}>SAVE {count}</Text>
        </TouchableOpacity>
   
 
   </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   input: {
@@ -81,6 +88,5 @@ const styles = StyleSheet.create({
    },
 });
   
-
 
 export default RegisterExpenses
