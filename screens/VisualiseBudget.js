@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
      height: 40,
      marginVertical: 18,
     marginHorizontal: 16,
+    backgroundColor:'#AFABAA',
    },
 });
 
