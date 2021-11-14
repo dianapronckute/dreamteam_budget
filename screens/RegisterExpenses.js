@@ -1,9 +1,9 @@
 import React , {useState}from 'react';
 import {View, Button, Text,SafeAreaView, StyleSheet, TextInput, TouchableOpacity, Component} from 'react-native'
 import VisualiseBudget from './VisualiseBudget';
-//import {Dropdown } from 'react-native-material-dropdown';
+
 import { LogBox } from 'react-native';
-import { Dropdown } from 'react-native-material-dropdown';
+
 import { NavigationContainer } from '@react-navigation/native';
  
 
@@ -38,11 +38,13 @@ const RegisterExpenses = ({ navigation }) => {
       <Text style={{ fontSize: 50, color: 'white' }}>+</Text>
        </TouchableOpacity>
 
-       <TextInput style={{  height: 40,
+       <Text
+       style= {{ height: 40,
     width: 200,
     margin: 20,
     borderWidth: 1,
-    padding: 0,fontSize: 20, color: 'red' }}>{count}</TextInput>
+   padding: 0,fontSize: 20, color: 'red'}}>{count}</Text>
+   
 
     <TouchableOpacity
     onPress={onPress2}

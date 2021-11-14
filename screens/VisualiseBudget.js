@@ -7,7 +7,7 @@ const VisualiseBudget = () => {
         <View style={{ flex:1, justifyContent: 'center', alignContent: 'center'}}>
         <Text style ={{ fontSize: 30}}>Visualise Your budget</Text>
         <Image
-        style={styles.Logo}
+        style={styles.logo}
         source={require('../screens/pie-chart.png')}
               />
         <FlatList
@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
   },
   
   logo: {
-    width: 66,
-    height: 58,
+    width: 266,
+    height: 258,
   },
    item: {
      padding: 10,
